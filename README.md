@@ -38,7 +38,7 @@ Dành cho quá trình phát triển và kiểm thử.
    npm run dev
    ```
 
-### 👉 Chế độ Development
+### 👉 Chế độ Production
 
 Dành cho triển khai thực tế.
 
