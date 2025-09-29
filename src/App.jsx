@@ -6,14 +6,9 @@ import './App.css';
 const App = () => {
   const [count, setCount] = useState(0);
 
-  // function myFunction() {
-  //   console.log('Run my Function');
-  // }
-  // myFunction();
-  const myArrowFunction = () => {
-    console.log('Run my Arrow Function');
+  const MyComponent = () => {
+    return <div>BinhPhan's First Component</div>;
   };
-  myArrowFunction();
 
   return (
     <>
@@ -26,6 +21,7 @@ const App = () => {
         </a>
       </div>
       <h1>Hello World</h1>
+      <MyComponent />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
