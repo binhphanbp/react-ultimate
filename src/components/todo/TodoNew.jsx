@@ -10,6 +10,7 @@ const TodoNew = (props) => {
 
   const handleClick = () => {
     addNewTodo(valueInput);
+    setValueInput('');
   };
 
   const handleOnChange = (name) => {
@@ -23,6 +24,7 @@ const TodoNew = (props) => {
         onChange={(event) => {
           handleOnChange(event.target.value);
         }}
+        value={valueInput}
         type="text"
       />
       <button style={{ cursor: 'pointer' }} onClick={handleClick}>
