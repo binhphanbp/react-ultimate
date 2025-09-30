@@ -18,7 +18,12 @@ const App = () => {
   };
 
   const addNewTodo = (name) => {
-    alert(`Hello ${name}`);
+    // alert(`Hello ${name}`);
+
+    const newTodo = { id: todoList.length + 1, name: name };
+
+    // todoList.push(newTodo); // Không nên sửa đổi trực tiếp state todoList mà phải thông qua hàm setTodoList
+    setTodoList([...todoList, newTodo]);
   };
   // addNewTodo();
 
