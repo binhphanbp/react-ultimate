@@ -3,18 +3,7 @@ import { useEffect, useState } from 'react';
 import { fetchAllUserAPI } from '../../services/api.service';
 
 const UserTable = () => {
-  const [dataUsers, setDataUsers] = useState([
-    {
-      _id: 'John Brown',
-      fullName: 32,
-      email: 'New York No. 1 Lake Park',
-    },
-    {
-      _id: 'Jim Green',
-      fullName: 42,
-      email: 'London No. 1 Lake Park',
-    },
-  ]);
+  const [dataUsers, setDataUsers] = useState([]);
 
   const columns = [
     {
