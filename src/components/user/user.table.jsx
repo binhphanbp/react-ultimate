@@ -1,4 +1,4 @@
-import { Space, Table, Tag } from 'antd';
+import { Table } from 'antd';
 import { useState } from 'react';
 import { fetchAllUserAPI } from '../../services/api.service';
 
@@ -61,7 +61,7 @@ const UserTable = () => {
   };
   loadUser();
 
-  return <Table columns={columns} dataSource={dataUsers} />;
+  return <Table columns={columns} dataSource={dataUsers} rowKey={'_id'} />;
 };
 
 export default UserTable;
