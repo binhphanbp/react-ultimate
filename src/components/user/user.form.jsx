@@ -17,16 +17,23 @@ const UserForm = () => {
     if (res.data) {
       notification.success({
         message: 'Create user',
-        description:
-          'Successfully create user with email: ' + res.data.data.email,
+        description: 'Successfully create user with email: ' + res.data.email,
       });
-      setIsModalOpen(false);
+      resetAndCloseModal();
     } else {
       notification.error({
         message: 'Create user failed',
         description: JSON.stringify(res.error) || 'Some thing went wrong',
       });
     }
+  };
+
+  const resetAndCloseModal = () => {
+    setIsModalOpen(false);
+    setFullName('');
+    setEmail('');
+    setPassword('');
+    setPhone('');
   };
 
   return (
@@ -54,7 +61,7 @@ const UserForm = () => {
         closable={{ 'aria-label': 'Custom Close Button' }}
         open={isModalOpen}
         onOk={() => handleSubmitBtn()}
-        onCancel={() => setIsModalOpen(false)}
+        onCancel={() => resetAndCloseModal()}
         maskClosable={false}
         okText={'Create'}
       >
