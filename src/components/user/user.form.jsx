@@ -2,7 +2,9 @@ import { Input, Button, notification, Modal } from 'antd';
 import { useState } from 'react';
 import { createUserAPI } from '../../services/api.service';
 
-const UserForm = () => {
+const UserForm = (props) => {
+  const { loadUser } = props;
+
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -20,6 +22,7 @@ const UserForm = () => {
         description: 'Successfully create user with email: ' + res.data.email,
       });
       resetAndCloseModal();
+      await loadUser();
     } else {
       notification.error({
         message: 'Create user failed',
